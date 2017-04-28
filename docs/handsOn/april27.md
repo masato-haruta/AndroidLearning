@@ -34,6 +34,6 @@ https://developer.android.com/studio/index.html
     adb devicesとすると、現在マシンに接続されているデバイス一覧が表示されます
 
 ■今回登場した便利コマンド    
-- アプリのビルド: ctrl + r
-- アプリのデバッグビルド: ctrl + d
-- ファイル検索: Shift + cmd + o
+- アプリのビルド: Ctrl + r
+- アプリのデバッグビルド: Ctrl + d
+- ファイル検索: Shift + Cmd + o (Shift3回タップでも可能)
