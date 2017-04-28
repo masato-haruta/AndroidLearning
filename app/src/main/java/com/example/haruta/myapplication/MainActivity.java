@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.haruta.myapplication.util.AuthUtil;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // ログイン処理を実行
-                if (loginId.getText().toString().trim().equals("hoge") && loginPassword.getText().toString().trim().equals("1234")) {
+                if (AuthUtil.isAuthorized(loginId.getText().toString().trim(), loginPassword.getText().toString().trim())) {
                     Toast.makeText(MainActivity.this, "認証成功", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(MainActivity.this, "認証失敗", Toast.LENGTH_LONG).show();
