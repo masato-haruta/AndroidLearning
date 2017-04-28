@@ -2,28 +2,36 @@ package com.example.haruta.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.haruta.myapplication.util.AuthUtil;
 
 public class MainActivity extends AppCompatActivity {
-
-    private String mTestText = "hoge";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 各Viewオブジェクトを初期化
+        final EditText loginId = (EditText) findViewById(R.id.login_edittext_id);
+        final EditText loginPassword = (EditText) findViewById(R.id.login_edittext_pass);
+        Button loginButton = (Button) findViewById(R.id.login_button_login);
 
-        // ログレベルによって出し分け(vervose, info, warnは割愛)
-
-        // 変数をデバッグとしてログ表示する
-        Log.d("javalog", mTestText + "という文字が入っています。");
-
-        try {
-            int dividerResult = 1 / 0;
-        } catch (ArithmeticException exception) {
-            // 致命的な問題としてログ出力する
-            Log.e("javalog", "ゼロ割例外：" + exception.getMessage());
-        }
+        // ボタンが押された時の挙動
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // ログイン処理を実行
+                if (AuthUtil.isAuthorized(loginId.getText().toString().trim(), loginPassword.getText().toString().trim())) {
+                    Toast.makeText(MainActivity.this, "認証成功", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "認証失敗", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }
