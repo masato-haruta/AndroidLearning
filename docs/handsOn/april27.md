@@ -1,4 +1,5 @@
-■第一回まとめ
+■第一回まとめ    
+
 0. 下記からAndroidStudio2.3.1をDLしておく
 https://developer.android.com/studio/index.html
 
@@ -31,3 +32,8 @@ https://developer.android.com/studio/index.html
     ./gradlew build とするとアプリがビルドできます
     adb install -r app/build/outputs/apk/app-debug.apk とするとapkがデバイスにインストールされます
     adb devicesとすると、現在マシンに接続されているデバイス一覧が表示されます
+
+■今回登場した便利コマンド    
+- アプリのビルド: ctrl + r
+- アプリのデバッグビルド: ctrl + d
+- ファイル検索: Shift + cmd + o
