@@ -7,7 +7,7 @@ https://developer.android.com/studio/index.html
 
 2. プロジェクト作成後gitの設定をする    
     git init で初期化    
-    .gitignore を置く (https://github.com/328w/DecologAndroid/blob/develop/.gitignore)    
+    .gitignoreを置くhttps://github.com/328w/DecologAndroid/blob/develop/.gitignore    
     git-flow init で初期化    
 
 3. Android用のコマンドのパスを通す    
