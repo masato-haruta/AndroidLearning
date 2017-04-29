@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         // ログイン処理を実行
         if (AuthUtil.isAuthorized(mLoginId.getText().toString().trim(),
                 mLoginPassword.getText().toString().trim())) {
-            Toast.makeText(MainActivity.this, "認証成功", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, getString(R.string.loginSuccess), Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(MainActivity.this, "認証失敗", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, getString(R.string.loginFail), Toast.LENGTH_LONG).show();
         }
     }
 }
