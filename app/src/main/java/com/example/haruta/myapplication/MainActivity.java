@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.example.haruta.myapplication.util.AuthUtil;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -23,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.login_button_login)
     Button mLoginButton;
 
+    @BindString(R.string.loginSuccess)
+    String mLoginSuccess;
+
+    @BindString(R.string.loginFail)
+    String mLoginFail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         // ログイン処理を実行
         if (AuthUtil.isAuthorized(mLoginId.getText().toString().trim(),
                 mLoginPassword.getText().toString().trim())) {
-            Toast.makeText(MainActivity.this, getString(R.string.loginSuccess), Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, mLoginSuccess, Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(MainActivity.this, getString(R.string.loginFail), Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, mLoginFail, Toast.LENGTH_LONG).show();
         }
     }
 }
