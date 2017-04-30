@@ -33,7 +33,7 @@ https://developer.android.com/studio/index.html
     adb install -r app/build/outputs/apk/app-debug.apk とするとapkがデバイスにインストールされます    
     adb devicesとすると、現在マシンに接続されているデバイス一覧が表示されます
 
-■今回登場した便利コマンド    
+■今回登場した便利ショートカットキー
 - アプリのビルド: Ctrl + r
 - アプリのデバッグビルド: Ctrl + d
 - ファイル検索: Shift + Cmd + o (Shift3回タップでも可能)
