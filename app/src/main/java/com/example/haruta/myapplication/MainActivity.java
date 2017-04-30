@@ -1,5 +1,6 @@
 package com.example.haruta.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         if (AuthUtil.isAuthorized(mLoginId.getText().toString().trim(),
                 mLoginPassword.getText().toString().trim())) {
             Toast.makeText(MainActivity.this, mLoginSuccess, Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, ListViewActivity.class);
+            startActivity(intent);
         } else {
             Toast.makeText(MainActivity.this, mLoginFail, Toast.LENGTH_LONG).show();
         }
