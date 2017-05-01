@@ -3,4 +3,5 @@
     <string name="helloWorld">ハローワールドって日本語にしてみる！</string>
     <string name="loginSuccess">ログイン成功</string>
     <string name="loginFail">ログイン失敗</string>
+    <string name="addList">追加</string>
 </resources>

@@ -3,4 +3,5 @@
     <string name="helloWorld">Hell world!</string>
     <string name="loginSuccess">login success</string>
     <string name="loginFail">login fail</string>
+    <string name="addList">add list</string>
 </resources>
