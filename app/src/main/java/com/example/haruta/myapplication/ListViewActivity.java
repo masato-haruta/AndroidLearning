@@ -12,6 +12,7 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnItemLongClick;
 
 
 public class ListViewActivity extends AppCompatActivity {
@@ -43,6 +44,13 @@ public class ListViewActivity extends AppCompatActivity {
     @OnClick(R.id.listview_button_add)
     public void addList() {
         mAdapter.add(getDateText());
+    }
+
+    @OnItemLongClick(R.id.my_listView)
+    public boolean onItemLongClick(int position) {
+        String selectedItem = (String) mListView.getItemAtPosition(position);
+        mAdapter.remove(selectedItem);
+        return false;
     }
 
     // 現在時刻を返す
