@@ -2,11 +2,13 @@ package com.example.haruta.myapplication;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,8 +18,6 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnItemLongClick;
-
 
 public class ListViewActivity extends AppCompatActivity {
 
@@ -27,6 +27,10 @@ public class ListViewActivity extends AppCompatActivity {
 
     @BindView(R.id.listview_button_add)
     Button mAddListButton;
+
+    @NonNull
+    @BindView(R.id.listview_edittext_title)
+    EditText mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +51,7 @@ public class ListViewActivity extends AppCompatActivity {
 
     @OnClick(R.id.listview_button_add)
     public void addList() {
-        mAdapter.add(getDateText());
-    }
-
-    // 現在時刻を返す
-    private String getDateText() {
-        Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        return simpleDateFormat.format(date);
+        mAdapter.add(mTitle.getText().toString());
     }
 
     // カスタムAdapter
@@ -94,7 +91,16 @@ public class ListViewActivity extends AppCompatActivity {
                 }
             });
 
+            holder.mDate.setText(getDateText());
+
             return convertView;
+        }
+
+        // 現在時刻を返す
+        private String getDateText() {
+            Date date = new Date();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            return simpleDateFormat.format(date);
         }
 
         static class ViewHolder {
@@ -103,6 +109,9 @@ public class ListViewActivity extends AppCompatActivity {
 
             @BindView(R.id.listview_button_delete)
             Button mDeleteButton;
+
+            @BindView(R.id.listview_text_date)
+            TextView mDate;
 
             ViewHolder(View view) {
                 ButterKnife.bind(this, view);
