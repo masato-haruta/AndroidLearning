@@ -7,12 +7,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.haruta.myapplication.util.AuthUtil;
+import com.example.haruta.myapplication.api.RestClient;
+import com.example.haruta.myapplication.model.BooleanResult;
 
 import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,13 +46,22 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.login_button_login)
     public void login() {
         // ログイン処理を実行
-        if (AuthUtil.isAuthorized(mLoginId.getText().toString().trim(),
-                mLoginPassword.getText().toString().trim())) {
-            Toast.makeText(MainActivity.this, mLoginSuccess, Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, ListViewActivity.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(MainActivity.this, mLoginFail, Toast.LENGTH_LONG).show();
-        }
+        new RestClient().auth(mLoginPassword.getText().toString().trim()).enqueue(new Callback<BooleanResult>() {
+            @Override
+            public void onResponse(Call<BooleanResult> call, Response<BooleanResult> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, mLoginSuccess, Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(MainActivity.this, mLoginFail, Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BooleanResult> call, Throwable t) {
+
+            }
+        });
     }
 }
