@@ -13,4 +13,4 @@ http://dev.domus.jp/kubox/practice/public
 | [POST /item](/docs/api/item_post.md) | itemを追加する |
 | [PUT /item](/docs/api/item_put.md) | itemを更新する |
 | [DELETE /item/{id}](item_delete.md) | itemを削除する |
-| [GET /item/{id}](item_select.md) | itemを取得する |
+| [GET /item/{id}](item_get.md) | itemを取得する |
