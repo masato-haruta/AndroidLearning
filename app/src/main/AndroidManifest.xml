@@ -21,8 +21,8 @@
         <activity
             android:name=".ListViewActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/ListViewTheme">
-        </activity>
+            android:theme="@style/ListViewTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
         <activity android:name=".EditListItemActivity"></activity>
     </application>
