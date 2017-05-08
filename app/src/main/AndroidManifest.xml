@@ -14,7 +14,7 @@
         <activity
             android:name=".ListViewActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
+            android:theme="@style/ListViewTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
