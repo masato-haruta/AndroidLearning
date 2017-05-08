@@ -3,6 +3,7 @@ package com.example.haruta.myapplication;
 import com.example.haruta.myapplication.util.ListViewUtil;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +30,10 @@ public class ListViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listview);
         ButterKnife.bind(this);
 
-        mListViewUtil = new ListViewUtil(this, (ListView) findViewById(R.id.my_listView));
+        mListViewUtil = new ListViewUtil(
+                this,
+                (ListView) findViewById(R.id.my_listView),
+                (SwipeRefreshLayout) findViewById(R.id.refresh));
         mListViewUtil.loadItems();
     }
 

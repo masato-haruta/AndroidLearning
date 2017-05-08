@@ -6,6 +6,7 @@ import com.example.haruta.myapplication.model.BooleanResult;
 import com.example.haruta.myapplication.model.Item;
 
 import android.content.Context;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -18,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ListViewUtil {
+public class ListViewUtil implements SwipeRefreshLayout.OnRefreshListener {
 
     @Getter
     @Accessors(prefix = {"m"})
@@ -34,10 +35,14 @@ public class ListViewUtil {
 
     private RestClient mRestClient;
 
-    public ListViewUtil(Context context, ListView listView) {
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+
+    public ListViewUtil(Context context, ListView listView, SwipeRefreshLayout swipeRefreshLayout) {
         mContext = context;
         mListView = listView;
         mRestClient = new RestClient();
+        mSwipeRefreshLayout = swipeRefreshLayout;
+        mSwipeRefreshLayout.setOnRefreshListener(this);
     }
 
     public void loadItems() {
@@ -49,11 +54,13 @@ public class ListViewUtil {
                     mAdapter = new MyListViewAdapter(ListViewUtil.this);
                     mListView.setAdapter(mAdapter);
                     mAdapter.notifyDataSetChanged();
+                    mSwipeRefreshLayout.setRefreshing(false);
                 }
             }
 
             @Override
             public void onFailure(Call<List<Item>> call, Throwable t) {
+                mSwipeRefreshLayout.setRefreshing(false);
                 Log.e("javalog", "load fail:" + Log.getStackTraceString(t));
             }
         });
@@ -63,7 +70,6 @@ public class ListViewUtil {
         mRestClient.postItem(editText.getText().toString()).enqueue(new Callback<Item>() {
             @Override
             public void onResponse(Call<Item> call, Response<Item> response) {
-                mAdapter.notifyDataSetChanged();
                 loadItems();
                 editText.setText("");
             }
@@ -103,8 +109,14 @@ public class ListViewUtil {
 
             @Override
             public void onFailure(Call<Item> call, Throwable t) {
-                Log.d("javalog", "get item fail:" + Log.getStackTraceString(t));
+                Log.e("javalog", "get item fail:" + Log.getStackTraceString(t));
             }
         });
+    }
+
+    @Override
+    public void onRefresh() {
+        mSwipeRefreshLayout.setRefreshing(true);
+        loadItems();
     }
 }
