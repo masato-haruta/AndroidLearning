@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +27,9 @@ public class ListViewActivity extends AppCompatActivity {
     @BindView(R.id.listview_button_logout)
     Button mLogoutButton;
 
+    @BindView(R.id.listview_text_loginid)
+    TextView mLoginId;
+
     private ListViewUtil mListViewUtil;
 
     @Override
@@ -39,7 +43,11 @@ public class ListViewActivity extends AppCompatActivity {
                 (ListView) findViewById(R.id.my_listView),
                 (SwipeRefreshLayout) findViewById(R.id.refresh),
                 (LinearLayout) findViewById(R.id.emptyView));
+
+        mListViewUtil.logoutIfNeeded();
+
         mListViewUtil.loadItems();
+        mListViewUtil.setLoginId(mLoginId);
     }
 
     @OnClick(R.id.listview_button_add)

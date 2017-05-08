@@ -33,26 +33,45 @@
             android:layout_below="@+id/listview_button_add"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/listview_button_logout"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/logout"
-            android:layout_alignParentBottom="true"/>
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/emptyView"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_below="@+id/listview_edittext_title">
+            <Button
+                android:id="@+id/listview_button_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="50sp"
+                android:text="LOGIN:" />
+
+            <TextView
+                android:id="@+id/listview_text_loginid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/blue1"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/listview_edittext_title"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emptyList"
                 android:textColor="@color/blue1"
-                android:text="@string/emptyList" />
+                android:textSize="50sp" />
         </LinearLayout>
     </RelativeLayout>
 </android.support.v4.widget.SwipeRefreshLayout>

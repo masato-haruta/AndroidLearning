@@ -10,12 +10,12 @@ import com.example.haruta.myapplication.model.Item;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -142,7 +142,7 @@ public class ListViewUtil implements SwipeRefreshLayout.OnRefreshListener {
         mContext.startActivity(intent);
     }
 
-    private void launchListViewActivity() {
+    public void launchListViewActivity() {
         Intent intent = new Intent(mContext, ListViewActivity.class);
         mContext.startActivity(intent);
     }
@@ -167,7 +167,34 @@ public class ListViewUtil implements SwipeRefreshLayout.OnRefreshListener {
         });
     }
 
+    public void setLoginId(TextView loginId) {
+        loginId.setText(PreferencesUtil.getLoginId());
+    }
+
+    public void autoLoginIfNeeded() {
+        if (PreferencesUtil.getIsAuthorized()) {
+            launchListViewActivity();
+        }
+    }
+
+    public void logoutIfNeeded() {
+        if (!PreferencesUtil.getIsAuthorized()) {
+            logout();
+        }
+    }
+
     public void logout() {
+        clear();
         launchMainActivity();
+    }
+
+    private void clear() {
+        PreferencesUtil.saveIsAuthorized(false);
+        PreferencesUtil.saveLoginId("");
+    }
+
+    public void save(TextView loginId) {
+        PreferencesUtil.saveLoginId(loginId.getText().toString());
+        PreferencesUtil.saveIsAuthorized(true);
     }
 }
