@@ -12,4 +12,6 @@
     <string name="cancelDialogButton">キャンセル</string>
 
     <string name="emptyList">リストは空です</string>
+
+    <string name="logout">ログアウト</string>
 </resources>

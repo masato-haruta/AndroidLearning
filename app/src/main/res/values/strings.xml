@@ -12,4 +12,6 @@
     <string name="cancelDialogButton">cancel</string>
 
     <string name="emptyList">Empty List!</string>
+
+    <string name="logout">logout</string>
 </resources>

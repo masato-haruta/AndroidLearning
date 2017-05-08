@@ -2,6 +2,7 @@ package com.example.haruta.myapplication.util;
 
 import com.example.haruta.myapplication.EditListItemActivity;
 import com.example.haruta.myapplication.ListViewActivity;
+import com.example.haruta.myapplication.MainActivity;
 import com.example.haruta.myapplication.MyListViewAdapter;
 import com.example.haruta.myapplication.api.RestClient;
 import com.example.haruta.myapplication.model.BooleanResult;
@@ -146,6 +147,11 @@ public class ListViewUtil implements SwipeRefreshLayout.OnRefreshListener {
         mContext.startActivity(intent);
     }
 
+    private void launchMainActivity() {
+        Intent intent = new Intent(mContext, MainActivity.class);
+        mContext.startActivity(intent);
+    }
+
     public void updateItem(int id, String title) {
         mRestClient.updateItem(id, title).enqueue(new Callback<Item>() {
             @Override
@@ -159,5 +165,9 @@ public class ListViewUtil implements SwipeRefreshLayout.OnRefreshListener {
                 Log.e("javalog", "put item fail:" + Log.getStackTraceString(t));
             }
         });
+    }
+
+    public void logout() {
+        launchMainActivity();
     }
 }

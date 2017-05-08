@@ -23,6 +23,9 @@ public class ListViewActivity extends AppCompatActivity {
     @BindView(R.id.listview_edittext_title)
     EditText mTitle;
 
+    @BindView(R.id.listview_button_logout)
+    Button mLogoutButton;
+
     private ListViewUtil mListViewUtil;
 
     @Override
@@ -42,5 +45,10 @@ public class ListViewActivity extends AppCompatActivity {
     @OnClick(R.id.listview_button_add)
     public void addItem() {
         mListViewUtil.registerItem(mTitle);
+    }
+
+    @OnClick(R.id.listview_button_logout)
+    public void logout() {
+        mListViewUtil.logout();
     }
 }
