@@ -4,6 +4,8 @@ import com.example.haruta.myapplication.model.Item;
 import com.example.haruta.myapplication.util.ListViewUtil;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -62,7 +64,18 @@ public class MyListViewAdapter extends BaseAdapter {
         holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListViewUtil.deleteItem(getItem(position));
+                new AlertDialog.Builder(mContext)
+                        .setTitle(R.string.deleteDialogTitle)
+                        .setMessage(R.string.deleteDialogBody)
+                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mListViewUtil.deleteItem(getItem(position));
+                            }
+                        })
+                        .setNegativeButton("cancel", null)
+                        .create()
+                        .show();
             }
         });
 

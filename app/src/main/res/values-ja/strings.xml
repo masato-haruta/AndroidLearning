@@ -5,4 +5,9 @@
     <string name="loginFail">ログイン失敗</string>
     <string name="addList">追加</string>
     <string name="deleteList">削除</string>
+
+    <string name="deleteDialogTitle">削除</string>
+    <string name="deleteDialogBody">実行しますか?</string>
+    <string name="okDialogButton">はい</string>
+    <string name="cancelDialogButton">キャンセル</string>
 </resources>

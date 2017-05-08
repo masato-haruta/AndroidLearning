@@ -5,4 +5,9 @@
     <string name="loginFail">login fail</string>
     <string name="addList">add list</string>
     <string name="deleteList">delete</string>
+
+    <string name="deleteDialogTitle">delete</string>
+    <string name="deleteDialogBody">do it?</string>
+    <string name="okDialogButton">ok</string>
+    <string name="cancelDialogButton">cancel</string>
 </resources>
