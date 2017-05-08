@@ -1,11 +1,15 @@
 package com.example.haruta.myapplication.util;
 
+import com.example.haruta.myapplication.EditListItemActivity;
+import com.example.haruta.myapplication.ListViewActivity;
 import com.example.haruta.myapplication.MyListViewAdapter;
 import com.example.haruta.myapplication.api.RestClient;
 import com.example.haruta.myapplication.model.BooleanResult;
 import com.example.haruta.myapplication.model.Item;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.widget.EditText;
@@ -38,13 +42,21 @@ public class ListViewUtil implements SwipeRefreshLayout.OnRefreshListener {
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
+    public static final String EDIT_TITLE = "EDIT_TITLE";
+
+    public static final String ID = "ID";
+
     public ListViewUtil(Context context, ListView listView, SwipeRefreshLayout swipeRefreshLayout, LinearLayout emptyView) {
-        mContext = context;
+        this(context);
         mListView = listView;
-        mRestClient = new RestClient();
         mSwipeRefreshLayout = swipeRefreshLayout;
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mListView.setEmptyView(emptyView);
+    }
+
+    public ListViewUtil(Context context) {
+        mContext = context;
+        mRestClient = new RestClient();
     }
 
     public void loadItems() {
@@ -120,5 +132,32 @@ public class ListViewUtil implements SwipeRefreshLayout.OnRefreshListener {
     public void onRefresh() {
         mSwipeRefreshLayout.setRefreshing(true);
         loadItems();
+    }
+
+    public void launchEditItemActivity(int id, String title) {
+        Intent intent = new Intent(mContext, EditListItemActivity.class);
+        intent.putExtra(EDIT_TITLE, title);
+        intent.putExtra(ID, id);
+        mContext.startActivity(intent);
+    }
+
+    private void launchListViewActivity() {
+        Intent intent = new Intent(mContext, ListViewActivity.class);
+        mContext.startActivity(intent);
+    }
+
+    public void updateItem(int id, String title) {
+        mRestClient.updateItem(id, title).enqueue(new Callback<Item>() {
+            @Override
+            public void onResponse(Call<Item> call, Response<Item> response) {
+                Log.d("javalog","hogehgoe"+response.body()+" "+response.isSuccessful());
+                launchListViewActivity();
+            }
+
+            @Override
+            public void onFailure(Call<Item> call, Throwable t) {
+                Log.e("javalog", "put item fail:" + Log.getStackTraceString(t));
+            }
+        });
     }
 }

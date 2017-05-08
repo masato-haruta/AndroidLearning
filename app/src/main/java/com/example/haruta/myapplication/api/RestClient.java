@@ -77,7 +77,7 @@ public class RestClient {
         return mApiService.registerItem(body);
     }
 
-    public Call<Item> putItem(int id, String body) {
+    public Call<Item> updateItem(int id, String body) {
         return mApiService.updateItem(id, body);
     }
 

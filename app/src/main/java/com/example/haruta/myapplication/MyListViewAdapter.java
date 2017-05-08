@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -81,6 +82,13 @@ public class MyListViewAdapter extends BaseAdapter {
 
         holder.mDate.setText(getItem(position).getCreated_at());
 
+        holder.mRow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListViewUtil.launchEditItemActivity(getItem(position).getId(), getItem(position).getBody());
+            }
+        });
+
         return convertView;
     }
 
@@ -94,6 +102,9 @@ public class MyListViewAdapter extends BaseAdapter {
 
         @BindView(R.id.listview_text_date)
         TextView mDate;
+
+        @BindView(R.id.listview_row_select)
+        RelativeLayout mRow;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
