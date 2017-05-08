@@ -10,4 +10,6 @@
     <string name="deleteDialogBody">実行しますか?</string>
     <string name="okDialogButton">はい</string>
     <string name="cancelDialogButton">キャンセル</string>
+
+    <string name="emptyList">リストは空です</string>
 </resources>

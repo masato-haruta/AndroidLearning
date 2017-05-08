@@ -7,6 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import butterknife.BindView;
@@ -33,7 +34,8 @@ public class ListViewActivity extends AppCompatActivity {
         mListViewUtil = new ListViewUtil(
                 this,
                 (ListView) findViewById(R.id.my_listView),
-                (SwipeRefreshLayout) findViewById(R.id.refresh));
+                (SwipeRefreshLayout) findViewById(R.id.refresh),
+                (LinearLayout) findViewById(R.id.emptyView));
         mListViewUtil.loadItems();
     }
 

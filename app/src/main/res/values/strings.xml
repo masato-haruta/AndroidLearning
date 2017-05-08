@@ -10,4 +10,6 @@
     <string name="deleteDialogBody">do it?</string>
     <string name="okDialogButton">ok</string>
     <string name="cancelDialogButton">cancel</string>
+
+    <string name="emptyList">Empty List!</string>
 </resources>

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.List;
@@ -37,12 +38,13 @@ public class ListViewUtil implements SwipeRefreshLayout.OnRefreshListener {
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
-    public ListViewUtil(Context context, ListView listView, SwipeRefreshLayout swipeRefreshLayout) {
+    public ListViewUtil(Context context, ListView listView, SwipeRefreshLayout swipeRefreshLayout, LinearLayout emptyView) {
         mContext = context;
         mListView = listView;
         mRestClient = new RestClient();
         mSwipeRefreshLayout = swipeRefreshLayout;
         mSwipeRefreshLayout.setOnRefreshListener(this);
+        mListView.setEmptyView(emptyView);
     }
 
     public void loadItems() {
