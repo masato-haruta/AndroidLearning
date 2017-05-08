@@ -3,4 +3,15 @@
     <string name="helloWorld">Hell world!</string>
     <string name="loginSuccess">login success</string>
     <string name="loginFail">login fail</string>
+    <string name="addList">add list</string>
+    <string name="deleteList">delete</string>
+
+    <string name="deleteDialogTitle">delete</string>
+    <string name="deleteDialogBody">do it?</string>
+    <string name="okDialogButton">ok</string>
+    <string name="cancelDialogButton">cancel</string>
+
+    <string name="emptyList">Empty List!</string>
+
+    <string name="logout">logout</string>
 </resources>
