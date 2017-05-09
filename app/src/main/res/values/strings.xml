@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">MyApp</string>
     <string name="helloWorld">Hell world!</string>
     <string name="loginSuccess">login success</string>
     <string name="loginFail">login fail</string>

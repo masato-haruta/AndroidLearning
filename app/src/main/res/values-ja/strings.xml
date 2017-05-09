@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">MyApp</string>
     <string name="helloWorld">ハローワールドって日本語にしてみる！</string>
     <string name="loginSuccess">ログイン成功</string>
     <string name="loginFail">ログイン失敗</string>

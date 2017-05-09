@@ -24,7 +24,7 @@ public class RestClient {
     public RestClient() {
 
         mApiService = new Retrofit.Builder()
-                .baseUrl(Url.ENDPOINT_URL)
+                .baseUrl(Url.getApiUrl())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(getHttpClientBuilder()
                         .build()).build().create(ApiService.class);
@@ -32,7 +32,7 @@ public class RestClient {
 
     public Retrofit.Builder getServiceBuilder() {
         return new Retrofit.Builder()
-                .baseUrl(Url.ENDPOINT_URL)
+                .baseUrl(Url.getApiUrl())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(getHttpClientBuilder().build());
     }
