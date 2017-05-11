@@ -5,3 +5,4 @@
 3. [ListViewの作成](https://github.com/masato-haruta/AndroidLearning/pull/5)
 
 ■今回登場した便利ショートカット等
+- ファイル検索 cmd + Shift + f
