@@ -1,5 +1,4 @@
-■次回予告(2017/5/11(木))
-※第一回まとめを参考に、6までを完了しておいてください
+■※第一回まとめを参考に、6までを完了しておいてください
 
 1. [codestyle設定](https://raw.githubusercontent.com/android/platform_development/master/ide/intellij/codestyles/AndroidStyle.xml) 
     - 上記リンク先からXMLをローカルに保存する
