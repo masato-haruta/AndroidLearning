@@ -3,11 +3,11 @@
 
 1. codestyle設定(https://raw.githubusercontent.com/android/platform_development/master/ide/intellij/codestyles/AndroidStyle.xml) https://328works.qiita.com/kamimoo/items/8e14a178b711e6887e27
     
-2. 多言語対応
+2. [多言語対応](https://github.com/masato-haruta/AndroidLearning/pull/1)
 
-3. 小さなデザイン変更
+3. [小さなデザイン変更](https://github.com/masato-haruta/AndroidLearning/pull/1)
     
-4. ログキャットの使い方
+4. [ログキャットの使い方](https://github.com/masato-haruta/AndroidLearning/pull/2)
     
 5. 特定ファイルやメソッドへのジャンプ(OSのソース等)
 
