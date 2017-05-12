@@ -21,29 +21,32 @@ public class ApiItemStore implements ItemStore {
     }
 
     @Override
-    public void getItems(ItemsCallback itemsCallback) {
+    public void getItems(final ItemsCallback callback) {
         mRestClient.getItems().enqueue(new Callback<List<Item>>() {
             @Override
             public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
-                //
+                callback.onItemsLoaded(response);
             }
 
             @Override
             public void onFailure(Call<List<Item>> call, Throwable t) {
+                callback.onError(t);
                 Log.e("javalog", "load fail:" + Log.getStackTraceString(t));
             }
         });
     }
 
     @Override
-    public void getItem(int id, ItemCallback itemCallback) {
+    public void getItem(int id, final ItemCallback callback) {
         mRestClient.getItem(id).enqueue(new Callback<Item>() {
             @Override
             public void onResponse(Call<Item> call, Response<Item> response) {
+                callback.onItemLoaded(response);
             }
 
             @Override
             public void onFailure(Call<Item> call, Throwable t) {
+                callback.onError(t);
                 Log.e("javalog", "get item fail:" + Log.getStackTraceString(t));
             }
         });
