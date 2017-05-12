@@ -1,10 +1,11 @@
-package com.example.haruta.myapplication;
+package com.example.haruta.myapplication.presentation.view.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.haruta.myapplication.R;
 import com.example.haruta.myapplication.util.ListViewUtil;
 
 import butterknife.BindView;

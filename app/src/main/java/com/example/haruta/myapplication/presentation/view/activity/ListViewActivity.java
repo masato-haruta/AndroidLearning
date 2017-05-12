@@ -1,5 +1,6 @@
-package com.example.haruta.myapplication;
+package com.example.haruta.myapplication.presentation.view.activity;
 
+import com.example.haruta.myapplication.R;
 import com.example.haruta.myapplication.util.ListViewUtil;
 
 import android.os.Bundle;

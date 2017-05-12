@@ -1,6 +1,7 @@
-package com.example.haruta.myapplication;
+package com.example.haruta.myapplication.presentation.view.adapter;
 
-import com.example.haruta.myapplication.model.Item;
+import com.example.haruta.myapplication.R;
+import com.example.haruta.myapplication.data.entity.Item;
 import com.example.haruta.myapplication.util.ListViewUtil;
 
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.example.haruta.myapplication;
+package com.example.haruta.myapplication.presentation.view.activity;
 
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.haruta.myapplication.api.RestClient;
-import com.example.haruta.myapplication.model.BooleanResult;
+import com.example.haruta.myapplication.R;
+import com.example.haruta.myapplication.data.api.RestClient;
+import com.example.haruta.myapplication.data.entity.BooleanResult;
 import com.example.haruta.myapplication.util.ListViewUtil;
 import com.example.haruta.myapplication.util.PreferencesUtil;
 

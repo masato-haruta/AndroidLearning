@@ -1,8 +1,8 @@
-package com.example.haruta.myapplication.api;
+package com.example.haruta.myapplication.data.api;
 
 
-import com.example.haruta.myapplication.model.BooleanResult;
-import com.example.haruta.myapplication.model.Item;
+import com.example.haruta.myapplication.data.entity.BooleanResult;
+import com.example.haruta.myapplication.data.entity.Item;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
 package com.example.haruta.myapplication.util;
 
-import com.example.haruta.myapplication.EditListItemActivity;
-import com.example.haruta.myapplication.ListViewActivity;
-import com.example.haruta.myapplication.MainActivity;
-import com.example.haruta.myapplication.MyListViewAdapter;
-import com.example.haruta.myapplication.api.RestClient;
-import com.example.haruta.myapplication.model.BooleanResult;
-import com.example.haruta.myapplication.model.Item;
+import com.example.haruta.myapplication.presentation.view.activity.EditListItemActivity;
+import com.example.haruta.myapplication.presentation.view.activity.ListViewActivity;
+import com.example.haruta.myapplication.presentation.view.activity.MainActivity;
+import com.example.haruta.myapplication.presentation.view.adapter.MyListViewAdapter;
+import com.example.haruta.myapplication.data.api.RestClient;
+import com.example.haruta.myapplication.data.entity.BooleanResult;
+import com.example.haruta.myapplication.data.entity.Item;
 
 import android.content.Context;
 import android.content.Intent;
