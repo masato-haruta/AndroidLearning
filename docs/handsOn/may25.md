@@ -1,4 +1,4 @@
-■第3回まとめを参考に、2までを完了しておいてください
+■次回(2017/5/25)予告※第3回まとめを参考に、2までを完了しておいてください
 
 1. [ListViewの作成](https://github.com/masato-haruta/AndroidLearning/pull/5)
 
