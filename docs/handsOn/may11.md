@@ -1,7 +1,7 @@
 ■※第一回まとめを参考に、6までを完了しておいてください
 
 1. [codestyle設定](https://raw.githubusercontent.com/android/platform_development/master/ide/intellij/codestyles/AndroidStyle.xml) 
-    - 上記リンク先からXMLをローカルに保存する
+    - 上記リンク先からXMLをローカルに保存する   
     - AndroidStudioを立ち上げて、
     [設定]->[Editor]->[Code Style]のScheme:の横の[Manage...]->[Import...]->[IntelliJ IDEA code style XML]->保存したXMLを指定
 
