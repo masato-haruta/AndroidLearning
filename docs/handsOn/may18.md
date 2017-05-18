@@ -1,4 +1,4 @@
-■次回予告(2017/5/18(木)) ※第2回まとめを参考に、6までを完了しておいてください
+■第2回まとめを参考に、6までを完了しておいてください
 
 1. [ログイン機能の作成](https://github.com/masato-haruta/AndroidLearning/pull/3)
 2. [ライブラリを使ったリファクタリング](https://github.com/masato-haruta/AndroidLearning/pull/4)
