@@ -1,4 +1,4 @@
-package com.example.haruta.myapplication.model;
+package com.example.haruta.myapplication.data.entity;
 
 import lombok.Data;
 

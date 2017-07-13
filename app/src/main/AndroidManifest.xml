@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".presentation.view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,12 +19,12 @@
         </activity>
 
         <activity
-            android:name=".ListViewActivity"
+            android:name=".presentation.view.activity.ListViewActivity"
             android:screenOrientation="portrait"
             android:theme="@style/ListViewTheme"
             android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
-        <activity android:name=".EditListItemActivity"></activity>
+        <activity android:name=".presentation.view.activity.EditListItemActivity"></activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
